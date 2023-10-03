@@ -10,7 +10,7 @@ class DirectorsController < ApplicationController
 
   def eldest
     @eldest = Director.all.where.not({:dob => nil}).order(dob: :asc)
-    @old = @eldest[0]
+    @eldest_director = @eldest[0]
     
     render({ :template => "director_templates/eldest"})
   end
